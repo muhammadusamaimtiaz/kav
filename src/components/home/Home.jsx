@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <div className="homepage-main">
         <div className="homepage-content">
-          <h1>Hello! Welcome to the Home</h1>
+          {/* <h1>Hello! Welcome to the Home</h1> */}
         </div>
       </div>
       {/* <FullScreenCarousel /> */}

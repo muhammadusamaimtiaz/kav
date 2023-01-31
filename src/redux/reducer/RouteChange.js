@@ -15,6 +15,7 @@ export const RouteChangeSlice = createSlice({
       state.from = state.to;
       state.to = action.payload.to;
       state.activeKey = action.payload.activeKey;
+      state.loading = true;
     },
     setTimeRouteChange: (state, action) => {
       state.activeKey = action.payload.activeKey;

@@ -9,11 +9,21 @@ import {
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setRouteChange } from "../../redux/reducer/RouteChange";
+import Loader from "./Loader";
 import SideMenu from "./SideMenu";
+import SideMenu2 from "./SideMenu2";
 
 const NavbarHome = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
+
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+
+    setTimeout(() => {
+      setIsOpen(true);
+    }, 800);
+  }
   return (
     <Navbar className="navbar-main navbar-expand" expand="xl">
       <Container fluid>
@@ -51,12 +61,13 @@ const NavbarHome = () => {
         </Navbar.Collapse>
         <Button
           onClick={() => {
-            setIsOpen(true);
+            openNav();
           }}
         >
           Menu
         </Button>
-        <SideMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+        {/* <SideMenu isOpen={isOpen} setIsOpen={setIsOpen} /> */}
+        <SideMenu2 isOpen={isOpen} setIsOpen={setIsOpen} />
       </Container>
     </Navbar>
   );
